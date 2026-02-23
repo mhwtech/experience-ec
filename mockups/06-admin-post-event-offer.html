@@ -4,57 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>イベント後オファー - 管理画面</title>
-  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-  <header>
-    <h1>管理画面</h1>
-  </header>
-  <nav>
-    <a href="00-index.html">モックアップ一覧</a>
-    <a href="01-admin-event-list.html">イベント一覧</a>
-    <a href="06-admin-post-event-offer.html">イベント後オファー</a>
-  </nav>
-  <main>
-    <h2 class="page-title">イベント後オファー</h2>
-    <p class="note">参加者向けに限定商品を案内し、メールまたはSMSで通知を送信します。この商品は一般には非公開です。</p>
-    <div class="card">
-      <form>
-        <label for="offer-event">対象イベント</label>
-        <select id="offer-event">
-          <option>森の学校（探求学習）</option>
-          <option>里山ワーケーション</option>
-          <option>林業体験</option>
-          <option>食X森</option>
-        </select>
-        <label for="offer-product">対象商品</label>
-        <select id="offer-product">
-          <option>参加者限定 森の恵みギフトセット</option>
-        </select>
-        <label>対象者</label>
-        <div>
-          <label style="display:inline; margin-right:1rem;"><input type="radio" name="audience" checked> 全員（当イベントの参加者全員）</label>
-          <label style="display:inline; margin-right:1rem;"><input type="radio" name="audience"> グループ（タグ・セグメントで指定）</label>
-          <label style="display:inline;"><input type="radio" name="audience"> 個人（個別指定）</label>
-        </div>
-        <label for="offer-channel">通知方法</label>
-        <select id="offer-channel">
-          <option>メール</option>
-          <option>SMS</option>
-          <option>メール + SMS</option>
-        </select>
-        <label for="offer-message">通知文</label>
-        <textarea id="offer-message" rows="4" placeholder="参加者限定オファーのご案内&#10;&#10;イベントご参加ありがとうございました。&#10;限定商品のご案内です。">参加者限定オファーのご案内
+  <aside class="admin-sidebar">
+    <div class="store-name">サンプルストア</div>
+    <nav>
+      <a href="#">ホーム</a>
+      <a href="#">注文</a>
+      <a href="#">商品</a>
+      <a href="#">顧客</a>
+      <div class="nav-divider"></div>
+      <div class="nav-section">アプリ</div>
+      <a href="01-admin-event-list.html">GM Event Ticketing</a>
+      <a href="06-admin-post-event-offer.html" class="active">オファー管理</a>
+      <div class="nav-divider"></div>
+      <a href="00-index.html">モックアップ一覧</a>
+    </nav>
+  </aside>
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1>オファー作成</h1>
+    </header>
+    <div class="admin-content">
+      <p class="admin-note">参加者向けに限定商品を案内し、メールまたはSMSで通知を送信します。この商品は一般には非公開です。</p>
+      <div class="admin-card">
+        <form class="admin-form">
+          <label for="offer-event">対象イベント</label>
+          <select id="offer-event">
+            <option>森の学校（探求学習）</option>
+            <option>里山ワーケーション</option>
+            <option>林業体験</option>
+            <option>食X森</option>
+          </select>
+          <label for="offer-product">対象商品</label>
+          <select id="offer-product">
+            <option>参加者限定 森の恵みギフトセット</option>
+          </select>
+          <label>対象者</label>
+          <div class="form-row">
+            <label><input type="radio" name="audience" checked> 全員（当イベントの参加者全員）</label>
+          </div>
+          <div class="form-row">
+            <label><input type="radio" name="audience"> グループ（タグ・セグメントで指定）</label>
+          </div>
+          <div class="form-row">
+            <label><input type="radio" name="audience"> 個人（個別指定）</label>
+          </div>
+          <label for="offer-channel">通知方法</label>
+          <select id="offer-channel">
+            <option>メール</option>
+            <option>SMS</option>
+            <option>メール + SMS</option>
+          </select>
+          <label for="offer-message">通知文</label>
+          <textarea id="offer-message" rows="4" placeholder="参加者限定オファーのご案内&#10;&#10;イベントご参加ありがとうございました。&#10;限定商品のご案内です。">参加者限定オファーのご案内
 
 イベントご参加ありがとうございました。
 限定商品のご案内です。下記リンクからご購入いただけます。</textarea>
-        <div class="actions">
-          <button type="submit">送信</button>
-          <a href="01-admin-event-list.html" class="btn secondary">キャンセル</a>
-        </div>
-      </form>
+          <div class="form-actions">
+            <button type="submit" class="admin-btn primary">送信</button>
+            <a href="01-admin-event-list.html" class="admin-btn secondary">キャンセル</a>
+          </div>
+        </form>
+      </div>
+      <p class="admin-mock-nav"><a href="00-index.html">モックアップ一覧へ</a></p>
     </div>
-    <p class="mock-nav"><a href="00-index.html">モックアップ一覧へ</a></p>
   </main>
 </body>
 </html>

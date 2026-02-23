@@ -4,38 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>イベント作成 - 管理画面</title>
-  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-  <header>
-    <h1>管理画面</h1>
-  </header>
-  <nav>
-    <a href="00-index.html">モックアップ一覧</a>
-    <a href="01-admin-event-list.html">イベント一覧</a>
-    <a href="06-admin-post-event-offer.html">イベント後オファー</a>
-  </nav>
-  <main>
-    <h2 class="page-title">イベント作成</h2>
-    <div class="card">
-      <form>
-        <label for="event-name">イベント名</label>
-        <input type="text" id="event-name" value="森の学校（探求学習）" placeholder="例: 森の学校（探求学習）">
-        <label for="event-datetime">日時</label>
-        <input type="datetime-local" id="event-datetime" value="2025-04-15T10:00">
-        <label for="event-place">場所</label>
-        <input type="text" id="event-place" value="〇〇県の森・自然体験施設" placeholder="会場名・住所">
-        <label for="event-price">料金（円）</label>
-        <input type="number" id="event-price" value="4500" min="0">
-        <label for="event-capacity">定員（名）</label>
-        <input type="number" id="event-capacity" value="20" min="1">
-        <div class="actions">
-          <button type="submit">保存</button>
-          <a href="01-admin-event-list.html" class="btn secondary">キャンセル</a>
-        </div>
-      </form>
+  <aside class="admin-sidebar">
+    <div class="store-name">サンプルストア</div>
+    <nav>
+      <a href="#">ホーム</a>
+      <a href="#">注文</a>
+      <a href="#">商品</a>
+      <a href="#">顧客</a>
+      <div class="nav-divider"></div>
+      <div class="nav-section">アプリ</div>
+      <a href="01-admin-event-list.html" class="active">GM Event Ticketing</a>
+      <a href="06-admin-post-event-offer.html">オファー管理</a>
+      <div class="nav-divider"></div>
+      <a href="00-index.html">モックアップ一覧</a>
+    </nav>
+  </aside>
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1>イベント作成</h1>
+    </header>
+    <div class="admin-content">
+      <div class="admin-card">
+        <form class="admin-form">
+          <label for="event-name">イベント名</label>
+          <input type="text" id="event-name" value="森の学校（探求学習）" placeholder="例: 森の学校（探求学習）">
+          <label for="event-datetime">日時</label>
+          <input type="datetime-local" id="event-datetime" value="2026-04-15T10:00">
+          <label for="event-place">場所</label>
+          <input type="text" id="event-place" value="〇〇県の森・自然体験施設" placeholder="会場名・住所">
+          <label for="event-price">料金（円）</label>
+          <input type="number" id="event-price" value="4500" min="0">
+          <label for="event-capacity">定員（名）</label>
+          <input type="number" id="event-capacity" value="20" min="1">
+          <div class="form-actions">
+            <button type="submit" class="admin-btn primary">保存</button>
+            <a href="01-admin-event-list.html" class="admin-btn secondary">キャンセル</a>
+          </div>
+        </form>
+      </div>
+      <p class="admin-mock-nav"><a href="01-admin-event-list.html">イベント一覧へ</a> | <a href="00-index.html">モックアップ一覧へ</a></p>
     </div>
-    <p class="mock-nav"><a href="01-admin-event-list.html">イベント一覧へ</a> | <a href="00-index.html">モックアップ一覧へ</a></p>
   </main>
 </body>
 </html>
