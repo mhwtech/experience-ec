@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>お支払い - ストア</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+  <header>
+    <h1>サンプルストア</h1>
+  </header>
+  <nav>
+    <a href="00-index.html">モックアップ一覧</a>
+    <a href="03-user-event-list.html">イベント一覧</a>
+  </nav>
+  <main>
+    <h2 class="page-title">お支払い</h2>
+    <div class="card">
+      <h3>注文内容</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>商品</th>
+            <th>数量</th>
+            <th>価格</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>春のワークショップ 2025（参加申込）</td>
+            <td>1</td>
+            <td>¥3,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>合計</strong> ¥3,000（税込）</p>
+    </div>
+    <div class="card">
+      <h3>お支払い情報</h3>
+      <p class="note">（実際のチェックアウトでは Shopify の支払い画面が表示されます）</p>
+      <form>
+        <label>カード番号</label>
+        <input type="text" placeholder="**** **** **** ****" disabled>
+        <label>有効期限</label>
+        <input type="text" placeholder="MM/YY" disabled>
+      </form>
+    </div>
+    <p><a href="04-user-event-detail.html" class="btn">注文する</a> <a href="04-user-event-detail.html" class="btn secondary">戻る</a></p>
+    <p class="mock-nav"><a href="03-user-event-list.html">イベント一覧へ</a> | <a href="00-index.html">モックアップ一覧へ</a></p>
+  </main>
+</body>
+</html>

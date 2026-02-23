@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>イベント作成 - 管理画面</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+  <header>
+    <h1>管理画面</h1>
+  </header>
+  <nav>
+    <a href="00-index.html">モックアップ一覧</a>
+    <a href="01-admin-event-list.html">イベント一覧</a>
+    <a href="06-admin-post-event-offer.html">イベント後オファー</a>
+  </nav>
+  <main>
+    <h2 class="page-title">イベント作成</h2>
+    <div class="card">
+      <form>
+        <label for="event-name">イベント名</label>
+        <input type="text" id="event-name" value="春のワークショップ 2025" placeholder="例: 春のワークショップ">
+        <label for="event-datetime">日時</label>
+        <input type="datetime-local" id="event-datetime" value="2025-04-15T14:00">
+        <label for="event-place">場所</label>
+        <input type="text" id="event-place" value="東京都渋谷区〇〇 1-2-3" placeholder="会場名・住所">
+        <label for="event-price">料金（円）</label>
+        <input type="number" id="event-price" value="3000" min="0">
+        <label for="event-capacity">定員（名）</label>
+        <input type="number" id="event-capacity" value="30" min="1">
+        <div class="actions">
+          <button type="submit">保存</button>
+          <a href="01-admin-event-list.html" class="btn secondary">キャンセル</a>
+        </div>
+      </form>
+    </div>
+    <p class="mock-nav"><a href="01-admin-event-list.html">イベント一覧へ</a> | <a href="00-index.html">モックアップ一覧へ</a></p>
+  </main>
+</body>
+</html>
