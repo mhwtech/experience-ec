@@ -160,5 +160,6 @@ flowchart LR
 
 | ドキュメント | 内容 |
 |--------------|------|
-| [02-tech-details.md](02-tech-details.md) | プラグイン vs 開発量・技術スタック図・プラグイン推奨 |
+| [02-tech-details.md](02-tech-details.md) | 技術スタック図・プラグイン・カスタム開発 |
 | [03-diagrams.md](03-diagrams.md) | ストアフロント表示の違い・管理／ユーザーフロー・画面遷移・参加者と限定商品の関係図 |
+| [04-next-steps.md](04-next-steps.md) | 次のステップ・ロードマップ |

@@ -5,8 +5,9 @@
 | ファイル | 内容 |
 |----------|------|
 | [01-architecture.md](01-architecture.md) | システム構成・全体図・データの流れ・コンポーネント関係 |
-| [02-tech-details.md](02-tech-details.md) | プラグイン vs 開発量・技術スタック図・プラグイン推奨（日本語対応） |
+| [02-tech-details.md](02-tech-details.md) | 技術スタック図・プラグイン・カスタム開発 |
 | [03-diagrams.md](03-diagrams.md) | ストアフロント表示の違い・フロー図・画面遷移・設計図の一覧 |
+| [04-next-steps.md](04-next-steps.md) | 次のステップ・ロードマップ（タスク・スケジュール・LOE、Phase 2・3 概要） |
 
 ## モックアップ
 

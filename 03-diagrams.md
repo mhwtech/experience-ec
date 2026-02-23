@@ -218,3 +218,4 @@ flowchart LR
 
 - [01-architecture.md](01-architecture.md) … システム構成・データの流れ
 - [02-tech-details.md](02-tech-details.md) … 技術スタック・プラグイン推奨
+- [04-next-steps.md](04-next-steps.md) … 次のステップ・ロードマップ
