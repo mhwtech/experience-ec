@@ -4,7 +4,7 @@
 
 Shopify を基盤に、**イベントの作成・申込・支払**と**イベント後の参加者限定商品オファー・購入**を扱う構成です。
 
-**推奨方針（クライアント提案用）**: ユーザーに「2つのサイト」と感じさせないため、**ストアフロントは一つの統一ストア**（テーマアプリ拡張またはカスタムセクションでイベント一覧と「あなた向け商品」を同一レイアウトで表示）とし、**管理はプラグイン中心**（イベントアプリ・Locksmith・メール/SMS アプリ）とする一案を推奨します。
+**推奨方針**: ユーザーに「2つのサイト」と感じさせないため、**ストアフロントは一つの統一ストア**（テーマアプリ拡張でイベント一覧と「あなた向け商品」を同一レイアウトで表示。代替としてカスタムセクションも可）とし、**イベント作成は GM Event Ticketing**（サブスク不要）＋ **参加者限定表示・オファー管理はカスタム開発** ＋ **通知はプラグイン**（メール/SMS アプリ）とする構成を推奨します。
 
 ---
 
@@ -59,28 +59,26 @@ flowchart LR
   subgraph shopify [Shopify]
     Products[商品]
     Checkout[チェックアウト]
-    Customers[顧客]
+    Customers[顧客・タグ]
     Orders[注文]
   end
-  subgraph app [カスタムアプリ]
-    EventDB[イベントDB]
-    Attendees[参加者一覧]
-    Tags[顧客タグ]
+  subgraph app [アプリ・プラグイン]
+    EventStore[イベント定義]
+    ParticipantLogic[参加者導出]
   end
-  EventDef --> EventDB
-  EventDB --> Products
-  Orders --> Attendees
-  Attendees --> Tags
+  EventDef --> EventStore
+  EventStore --> Products
+  Orders --> ParticipantLogic
+  ParticipantLogic --> Customers
   OfferDef --> Products
-  OfferDef --> Attendees
-  Tags --> Checkout
-  Products --> Checkout
+  OfferDef --> ParticipantLogic
   Customers --> Checkout
+  Products --> Checkout
 ```
 
-- イベント定義はアプリで保持し、チケット商品を Shopify と連携。
-- 注文（orders）から参加者を抽出し、タグで限定表示・通知対象を制御。
-- オファーは「どの商品を」「誰に」を定義し、同一チェックアウトで購入可能にする。
+- **イベント定義**: GM Event Ticketing が管理（metafields 等）。チケット商品は Shopify と連携。
+- **参加者**: 注文（Orders）から導出。アプリ・プラグインが参加者を識別し、顧客にタグを付与。**顧客タグは Shopify の Customer に保存**され、カスタムアプリで限定表示・通知対象の制御に利用。（※Locksmith 等のプラグインでも同機能を実現可能）
+- **オファー**: 「どの商品を」「誰に」を定義し、同一チェックアウトで購入可能にする。
 
 ---
 
@@ -127,8 +125,9 @@ flowchart TB
   customApp --> Notify
 ```
 
-- ストアフロント: テーマ + アプリ拡張（またはカスタムセクション）でイベント一覧・詳細・「あなた向け商品」を同一レイアウトで表示。申込・購入は同一チェックアウト。データはイベントアプリ・Locksmith 等のプラグインから利用。
-- 管理: プラグイン（イベントアプリ・Locksmith・メール/SMS アプリ）中心。必要に応じ小規模な管理専用アプリでオファー作成・通知を一括。
+- ストアフロント: テーマ + テーマアプリ拡張（推奨。代替: カスタムセクション）でイベント一覧・詳細・「あなた向け商品」を同一レイアウトで表示。申込・購入は同一チェックアウト。イベントデータは GM Event Ticketing から、参加者限定表示はカスタム開発。
+- 管理: GM Event Ticketing でイベント作成。カスタムアプリで参加者タグ・オファー作成・通知を一括。メール/SMS 配信は Klaviyo 等のプラグインを利用可能。
+- **Admin GraphQL API**: Shopify が提供する公式 API。管理画面やカスタムアプリから、商品・顧客・注文などのストアデータを安全に読み書きするための窓口です。
 
 ---
 

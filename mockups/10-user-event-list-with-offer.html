@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>イベント一覧 - ストア</title>
+  <title>イベント一覧 ＋ あなたへのおすすめ - ストア（参加後）</title>
   <link rel="stylesheet" href="common.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
   </nav>
   <main>
     <h2 class="page-title">イベント一覧</h2>
-    <p class="note">参加前はこの一覧のみ表示されます。参加後は同じ画面に「あなたへのおすすめ」商品ブロックも表示されます。</p>
+    <p class="note">参加済みのユーザーには、同じ画面に「あなたへのおすすめ」ブロックが表示されます。一つのストアとして統一された体験です。</p>
     <div class="card">
       <table>
         <thead>
@@ -61,7 +61,22 @@
         </tbody>
       </table>
     </div>
-    <p class="mock-nav"><a href="10-user-event-list-with-offer.html">参加後の表示（イベント一覧 ＋ あなたへのおすすめ）</a> | <a href="00-index.html">モックアップ一覧へ</a></p>
+
+    <h2 class="page-title">あなたへのおすすめ</h2>
+    <p class="note">参加者限定 — イベントにご参加いただいた方のみご覧いただける商品です。</p>
+    <div class="card">
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-start;">
+        <div style="flex: 1; min-width: 200px; padding: 1rem; border: 1px solid #ecf0f1; border-radius: 6px;">
+          <p style="margin: 0 0 0.5rem 0; font-size: 0.85rem; color: #7f8c8d;">参加者限定</p>
+          <p style="margin: 0 0 0.5rem 0; font-weight: 600;">森の恵みギフトセット</p>
+          <p style="margin: 0 0 0.75rem 0; font-size: 0.9rem;">森の学校（探求学習）参加者向け</p>
+          <p style="margin: 0 0 0.75rem 0;"><strong>¥2,800</strong>（税込）</p>
+          <a href="08-user-offer-product.html" class="btn">詳細を見る</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="mock-nav"><a href="03-user-event-list.html">参加前の表示（イベント一覧のみ）</a> | <a href="00-index.html">モックアップ一覧へ</a></p>
   </main>
 </body>
 </html>
