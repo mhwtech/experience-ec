@@ -104,17 +104,17 @@ gantt
     title ロードマップ概要
     dateFormat  YYYY-MM
     section Phase 1
-    環境構築・参加者タグ     :a1, 2026-04, 3w
-    オファー管理・通知       :a2, after a1, 4w
-    ストアフロント拡張       :a3, after a1, 4w
-    結合テスト              :a4, after a2 a3, 2w
+    環境構築・参加者タグ     :a1, 2026-04, 4w
+    オファー管理・通知       :a2, after a1, 5w
+    ストアフロント拡張       :a3, after a1, 5w
+    結合テスト              :a4, after a2 a3, 4w
     section Phase 2
     商品オーナー（概要）     :b1, 2026-10, 2w
     section Phase 3
     キックバック・再販（概要） :c1, 2027-01, 2w
 ```
 
-※ 日付は仮。実際のスケジュールは Phase 1 の進捗に応じて調整します。
+※ Phase 1 の結合テストは 7/1 頃完了を目安。実際のスケジュールは進捗に応じて調整します。
 
 ---
 
